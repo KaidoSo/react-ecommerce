@@ -5,6 +5,8 @@ import 'popper.js/dist/umd/popper';
 import 'bootstrap/dist/js/bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const element = <button class="btn btn-danger">Hei</button>;
-ReactDOM.render(element, document.getElementById('root'));
+import NavBar from "./App";
+import './index.css';
+
+ReactDOM.render(<NavBar/>, document.getElementById('root'));
 
