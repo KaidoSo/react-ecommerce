@@ -1,12 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'jquery';
-import 'popper.js/dist/umd/popper';
-import 'bootstrap/dist/js/bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import NavBar from "./App";
-import './index.css';
+// stateless functional component
+// always return JSX
 
-ReactDOM.render(<NavBar/>, document.getElementById('root'));
+function BookList() {
+  return (
+    <section>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
+  );
+}
 
+const Book = () => {
+  return <article>this is a book</article>;
+};
+
+ReactDOM.render(<BookList />, document.getElementById("root"));
