@@ -3,21 +3,38 @@ import ReactDOM from "react-dom";
 
 // CSS
 import "./index.css";
-const title = "21 Lessons for the 21st Century";
-const author = "Yuval Noah Harari";
-const img =
-  "https://images-na.ssl-images-amazon.com/images/I/41SxL78DpvL._SX324_BO1,204,203,200_.jpg";
+
+const firstBook = {
+  img: "https://images-na.ssl-images-amazon.com/images/I/41x9l0H2UGL._SX324_BO1,204,203,200_.jpg",
+  title: "Homo Deus",
+  author: "Yuval Noah Harari",
+};
+
+const secondBook = {
+  img: "https://images-na.ssl-images-amazon.com/images/I/41SxL78DpvL._SX324_BO1,204,203,200_.jpg",
+  title: "21 Lessons for the 21st Century",
+  author: "Yuval Noah Harari",
+};
 
 function BookList() {
   return (
     <section className="book-list">
-      <Book job="developer" />
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      />
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
+      />
     </section>
   );
 }
 
 const Book = (props) => {
-  console.log("🚀 ~ file: index.js ~ line 20 ~ Book ~ props", props);
+  const { img, title, author } = props;
   return (
     <article className="book">
       <img src={img} alt="booke" />
