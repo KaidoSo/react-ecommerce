@@ -3,32 +3,33 @@ import ReactDOM from "react-dom";
 
 // CSS
 import "./index.css";
-
-const firstBook = {
-  img: "https://images-na.ssl-images-amazon.com/images/I/41x9l0H2UGL._SX324_BO1,204,203,200_.jpg",
-  title: "Homo Deus",
-  author: "Yuval Noah Harari",
-};
-
-const secondBook = {
-  img: "https://images-na.ssl-images-amazon.com/images/I/41SxL78DpvL._SX324_BO1,204,203,200_.jpg",
-  title: "21 Lessons for the 21st Century",
-  author: "Yuval Noah Harari",
-};
+const books = [
+  {
+    id: 1,
+    img: "https://images-na.ssl-images-amazon.com/images/I/41x9l0H2UGL.jpg",
+    title: "Homo Deus",
+    author: "Yuval Noah Harari",
+  },
+  {
+    id: 2,
+    img: "https://images-na.ssl-images-amazon.com/images/I/41SxL78DpvL.jpg",
+    title: "21 Lessons for the 21st Century",
+    author: "Yuval Noah Harari",
+  },
+  {
+    id: 3,
+    img: "https://m.media-amazon.com/images/I/51wH91YObNL.jpg",
+    title: "The Lincoln Highway: A Novel",
+    author: "Amor Towles",
+  },
+];
 
 function BookList() {
   return (
     <section className="book-list">
-      <Book
-        img={firstBook.img}
-        title={firstBook.title}
-        author={firstBook.author}
-      />
-      <Book
-        img={secondBook.img}
-        title={secondBook.title}
-        author={secondBook.author}
-      />
+      {books.map((book, index) => {
+        return <Book key={book.id} {...book} />;
+      })}
     </section>
   );
 }
